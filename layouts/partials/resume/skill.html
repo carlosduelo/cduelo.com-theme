@@ -1,0 +1,24 @@
+<section class="row">
+  <header class="col-md-2 d-flex align-items-center">
+    <h3>{{ i18n "Skills" }}</h3>
+  </header>
+  <div class="col-md-10 d-flex align-items-center">
+    <div class="row">
+      {{ $len := (len .Params.Skill) }}
+      {{ range $idx, $elem := .Params.Skill}}
+      {{ if eq (add $idx 1) $len }}
+        <div class="col-md">
+      {{ else }}
+        <div class="col-md border-right">
+      {{ end }}
+        <h4>{{ .area }}</h4>
+        <ul>
+          {{ range .skills}}
+          <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+      </div>
+      {{end }}
+    </div>
+  </div>
+</section>

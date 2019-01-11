@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-md navbar-light fixed-top" id="nav-cduelo">
+  <img src="{{.Site.BaseURL}}/favicon.png" width="30" height="30" class="d-inline-block align-top" alt="">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.main }}
+        <li class="navbar-item {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}">
+          <a class="nav-link" href="{{ .URL | absLangURL }}" title="{{ .Title }}">{{ .Name }}</a>
+        </li>
+      {{ end }}
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      {{ range .Translations }}
+        <li class="navbar-item">
+        <a href="{{ .Permalink }}" title="{{ .Title }}-{{ .Lang }}">
+          <img src="/icons/{{ .Lang }}-flag.png" width="15" height="15" class="d-inline-block" alt="">
+        </a>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,36 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--color01);
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-top: 5px;
+}
+
+#simpleiconcredit {
+  font-size: 0.6rem;
+}
+
+#myfooter > a {
+  margin: 5px;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 575px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 767px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 991px) {
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1199px) {
+}

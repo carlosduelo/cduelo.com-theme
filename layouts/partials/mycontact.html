@@ -1,0 +1,57 @@
+  <style>
+#mypicutre {
+  width: 100px;
+  height: auto;
+  margin: 20px 0;
+}
+  </style>
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
+      <h1>{{.Site.Params.personal.contact.name}}</h1>
+      <h3>{{.Site.Params.personal.contact.profession}}</h3>
+    </div>
+
+    <div class="col-md-6 col-sm-12 text-right">
+      <img id="mypicutre" class="rounded-circle" src="{{.Site.BaseURL}}/favicon.png">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
+      <dl class="contact">
+        <dt>{{ i18n "Address" }}:</dt>
+        <dd>{{.Site.Params.personal.contact.Address}}</dd>
+        <dt>Email:</dt>
+        <dd>
+        <a href="mailto:{{.Site.Params.personal.contact.email}}">
+          {{.Site.Params.personal.contact.email}}
+        </a>
+        </dd>
+        <dt>Website:</dt>
+        <dd>
+        <a href="{{.Site.Params.personal.contact.website}}">
+          {{.Site.Params.personal.contact.website}}
+        </a>
+        </dd>
+      </dl>
+    </div>
+
+    <div class="col-md-6 col-sm-12">
+      <ul class="networks list-inline text-right">
+        <li>
+          <a href="{{.Site.Params.personal.github.url}}">
+           {{.Site.Params.personal.github.user}} @ github
+          </a>
+        </li>
+        <li>
+          <a href="{{.Site.Params.personal.twitter.url}}">
+            {{.Site.Params.personal.twitter.user}} @ twitter
+          </a>
+        </li>
+        <li>
+          <a href="{{.Site.Params.personal.linkedin.url}}">
+            {{.Site.Params.personal.linkedin.user}} @ linkedin
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>

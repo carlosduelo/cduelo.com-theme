@@ -1,0 +1,20 @@
+[Address]
+  other = "Dirección"
+
+[About]
+  other = "Sobre mi"
+
+[pdfversion]
+  other = "Versión PDF"
+
+[Education]
+  other = "Educación"
+
+[WorkExperience]
+  other = "Experiencia"
+
+[Skills]
+  other = "Habilidades"
+
+[Gallery]
+  other = "Galería"

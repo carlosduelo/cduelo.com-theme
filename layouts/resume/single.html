@@ -1,0 +1,15 @@
+{{ define "main" }}
+<main role="main" class="container">
+  {{- partial "mycontact.html" . -}}
+  <hr/>
+  {{- partial "resume/description.html" . -}}
+  <hr/>
+  {{- partial "resume/skill.html" . -}}
+  <hr/>
+  {{- partial "resume/education.html" . -}}
+  <hr/>
+  {{- partial "resume/experience.html" . -}}
+  <hr/>
+  {{- partial "resume/download.html" . -}}
+</main>
+{{ end }}

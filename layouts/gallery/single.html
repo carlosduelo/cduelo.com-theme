@@ -1,0 +1,52 @@
+{{ define "main" }}
+<main role="main" class="container">
+
+<div class="jumbotron" id="gallery-title">
+
+  <h1>{{ .Title }}</h1>
+
+  <p>{{ .Description }}</p>
+
+</div>
+
+<div class="gallery">
+  <div class="card-columns">
+    {{ range .Params.Pictures }}
+      <div class="card">
+        <img class="img-thumbnail" title="{{.Title}}" src="/img100/{{.SRC}}" sizes="(min-width: 20em) 40vw, 100vw"
+             srcset="/img120/{{.SRC}} 120w, /img220/{{.SRC}} 220w,
+                     /img330/{{.SRC}} 330w, /img420/{{.SRC}} 420w,
+                     /img520/{{.SRC}} 520w, /img620/{{.SRC}} 620w,
+                     /img720/{{.SRC}} 720w, /img820/{{.SRC}} 820w,
+                     /img920/{{.SRC}} 920w, /img1020/{{.SRC}} 1020w">
+      </div>
+    {{ end }}
+  </div>
+
+  <!-- lightbox modal -->
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" id="gallery-modal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+
+        <div id="gallery-controls" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+
+          </div>
+          <a class="carousel-control-prev" href="#gallery-controls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#gallery-controls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- end lightbox modal -->
+
+</main>
+
+{{ end }}

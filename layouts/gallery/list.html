@@ -1,0 +1,37 @@
+{{ define "main" }}
+<main role="main" class="container">
+<div class="jumbotron" id="gallery-title">
+  <h1 class="text-center">
+    {{ i18n "Gallery" }}
+  </h1>
+</div>
+
+  <div class="card-columns">
+  {{ range .Pages }}
+    <div class="card" onClick="location.href='{{ .URL | relURL }}'">
+      {{ if .Params.CoverPicture }}
+        <img class="card-img-top" title="{{.Title}}" src="/img100/{{.Params.CoverPicture}}" sizes="(min-width: 20em) 40vw, 100vw"
+             srcset="/img120/{{.Params.CoverPicture}} 120w, /img220/{{.Params.CoverPicture}} 220w,
+                     /img330/{{.Params.CoverPicture}} 330w, /img420/{{.Params.CoverPicture}} 420w,
+                     /img520/{{.Params.CoverPicture}} 520w, /img620/{{.Params.CoverPicture}} 620w,
+                     /img720/{{.Params.CoverPicture}} 720w, /img820/{{.Params.CoverPicture}} 820w,
+                     /img920/{{.Params.CoverPicture}} 920w, /img1020/{{.Params.CoverPicture}} 1020w">
+      {{ else }}
+        {{ range first 1 (shuffle .Params.Pictures) }}
+        <img class="card-img-top" title="{{.Title}}" src="/img100/{{.SRC}}" sizes="(min-width: 20em) 40vw, 100vw"
+             srcset="/img120/{{.SRC}} 120w, /img220/{{.SRC}} 220w,
+                     /img330/{{.SRC}} 330w, /img420/{{.SRC}} 420w,
+                     /img520/{{.SRC}} 520w, /img620/{{.SRC}} 620w,
+                     /img720/{{.SRC}} 720w, /img820/{{.SRC}} 820w,
+                     /img920/{{.SRC}} 920w, /img1020/{{.SRC}} 1020w">
+        {{ end }}
+      {{ end }}
+      <div class="card-body">
+        <h5 class="card-title">{{ .Title }}</h5>
+        <p class="card-text">{{ .Description }}</p>
+      </div>
+    </div>
+  {{ end }}
+  </div>
+</main>
+{{ end }}
